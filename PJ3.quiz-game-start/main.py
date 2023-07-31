@@ -13,5 +13,10 @@ for question in question_data:
 # Question 객체에는 question_data의 dict(text, answer)값이 속성으로 입력.
 
 
-quiz = QuizBrain(question_bank)
-quiz.next_question()
+quiz = QuizBrain(question_bank) # quiz 객체 생성
+
+while quiz.still_has_question():
+    quiz.next_question() # QuizBrain 메서드 next_question() 호출
+
+print("You've completed the quiz")
+print(f"Your final score was {quiz.score}/{quiz.question_number}")
